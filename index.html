@@ -11,13 +11,6 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%231f3d37'/%3E%3Crect x='4' y='4' width='8' height='8' rx='1' fill='%23ff7a2e'/%3E%3C/svg%3E">
 <link rel="preload" href="fonts/bc-800-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/bc-800-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
-<!--
-  Náhľad pre Babetta KGP. Pripravil Esticode (esticode.sk).
-  Obsah prepísaný z babettakgp.sk (stav 9.11.2026) a menucka.sk.
-  Položky, ktoré treba overiť s prevádzkou, sú označené komentárom TODO-OVERIT.
-  Vizuálny smer: plagátová typografia a farebné plochy (referencia Refero: Impossible Foods,
-  detail záverečného nápisu z Hungry Tiger), farby z vlastnej palety Babetty. Bez fotiek a loga.
--->
 <style>
 @font-face{font-family:"Barlow Condensed";font-style:normal;font-weight:800;font-display:swap;src:url(fonts/bc-800-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
 @font-face{font-family:"Barlow Condensed";font-style:normal;font-weight:800;font-display:swap;src:url(fonts/bc-800-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
@@ -25,8 +18,6 @@
 @font-face{font-family:"Barlow Condensed";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/bc-600-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 
 :root{
-  /* Roly farieb: canvas = predvolená plocha, deep = panely a päta,
-     hot = len plagátové nadpisy, ceny a hlavné tlačidlá, relief = svetlé plochy pre dlhé zoznamy a vybrané záložky */
   --canvas:#1f3d37;
   --deep:#11241f;
   --hot:#ff7a2e;
@@ -51,10 +42,8 @@ a{color:inherit}
 .label{font-family:var(--poster);font-weight:600;text-transform:uppercase;letter-spacing:.03em;line-height:1}
 sup{font-size:.68em;line-height:0;opacity:.7;font-weight:400}
 
-/* Ukážkový pruh */
 .demo{background:var(--relief);color:var(--ink);font-size:.8125rem;line-height:1.35;text-align:center;padding:.55rem var(--gut);font-weight:600}
 
-/* Plávajúca navigácia */
 .nav{position:sticky;top:0;z-index:10;padding:10px var(--gut) 0;pointer-events:none}
 .nav-in{pointer-events:auto;max-width:var(--max);margin:0 auto;display:flex;align-items:center;gap:6px;height:52px;padding:0 6px 0 14px;background:var(--deep);border-radius:10px}
 .nav-links{display:flex;gap:16px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0;padding-right:20px;-webkit-mask:linear-gradient(90deg,#000 calc(100% - 24px),transparent);mask:linear-gradient(90deg,#000 calc(100% - 24px),transparent)}
@@ -67,7 +56,6 @@ sup{font-size:.68em;line-height:0;opacity:.7;font-weight:400}
 .btn-sm{min-height:40px;padding:0 14px;font-size:1.25rem;flex:none}
 .btn:focus-visible,.nav-links a:focus-visible,.tab:focus-visible,summary:focus-visible{outline:3px solid var(--hot);outline-offset:3px}
 
-/* Úvod: typografické pódium */
 .hero{padding:44px 0 72px}
 .hero h1{font-size:clamp(5.2rem,27vw,13rem);color:var(--hot)}
 .hero h1 span{display:block}
@@ -79,7 +67,6 @@ sup{font-size:.68em;line-height:0;opacity:.7;font-weight:400}
 .badge{display:inline-block;background:var(--relief);color:var(--ink);font-family:var(--poster);font-weight:600;text-transform:uppercase;letter-spacing:.03em;font-size:1rem;line-height:1;padding:6px 9px 5px;border-radius:6px;margin-left:6px;vertical-align:1px}
 .cta{display:flex;flex-wrap:wrap;gap:10px}
 
-/* Vlnitý okraj medzi plochami */
 .wave{position:relative}
 .wave::before{content:"";position:absolute;left:0;right:0;top:-15px;height:16px;background:inherit;
   -webkit-mask:radial-gradient(14px 16px at 50% 100%,#000 98%,transparent) 0 0/28px 16px repeat-x;
@@ -97,7 +84,6 @@ section{padding:56px 0 64px}
 .light .sec-head p{color:var(--ink-2)}
 .dark .sec-head p,.deeper .sec-head p{color:var(--on-dark-2)}
 
-/* Denné menu */
 .tabs{display:flex;gap:6px;margin:0 0 12px;overflow-x:auto;scrollbar-width:none}
 .tab{flex:1 0 auto;min-width:56px;min-height:48px;border:0;border-radius:8px;background:transparent;box-shadow:inset 0 0 0 2px var(--rule-light);color:var(--ink);font-family:var(--poster);font-weight:800;text-transform:uppercase;font-size:1.375rem;line-height:1;cursor:pointer;padding:6px 10px}
 .tab small{display:block;font-weight:600;font-size:.8125rem;letter-spacing:.03em;opacity:.7;margin-top:2px}
@@ -115,7 +101,6 @@ section{padding:56px 0 64px}
 .note-s{font-size:.9375rem;margin:0 0 8px}
 .light .note-s{color:var(--ink-2)}
 
-/* Položky menu */
 .list{list-style:none;margin:0;padding:0}
 .item{display:grid;grid-template-columns:1fr auto;gap:4px 16px;padding:16px 0;border-top:1px solid var(--rule-light)}
 .dark .item,.deeper .item{border-color:var(--rule-dark)}
@@ -129,7 +114,6 @@ section{padding:56px 0 64px}
 .g{font-weight:400;font-size:.875rem;opacity:.7;white-space:nowrap}
 .tight .item{padding:11px 0}
 
-/* Nápojový lístok: rozbaľovacie kategórie */
 .cat{border-top:2px solid var(--canvas)}
 .cat:last-of-type{border-bottom:2px solid var(--canvas)}
 .cat summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px;padding:12px 0}
@@ -145,7 +129,6 @@ section{padding:56px 0 64px}
 .cat .item:first-child{border-top:0}
 .fine{font-size:.875rem;color:var(--ink-2);margin:22px 0 0;line-height:1.5}
 
-/* Kontakt */
 .map{position:relative;aspect-ratio:1/1;border-radius:10px;overflow:hidden;background:var(--canvas)}
 .map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .info{display:grid;gap:28px}
@@ -154,7 +137,6 @@ section{padding:56px 0 64px}
 .blk a{color:var(--on-dark);text-decoration-color:var(--hot);text-underline-offset:3px;text-decoration-thickness:2px}
 .big-tel{display:inline-block;font-family:var(--poster);font-weight:800;font-size:2.75rem;line-height:.9;text-decoration:none!important;color:var(--on-dark)}
 
-/* Päta s veľkým nápisom */
 footer{background:var(--deep);padding:0 0 28px;overflow:hidden}
 .foot-grid{display:grid;gap:22px;padding:48px 0 36px;font-size:.9375rem;color:var(--on-dark-2)}
 .foot-grid p{margin:0 0 4px}
@@ -212,7 +194,6 @@ footer{background:var(--deep);padding:0 0 28px;overflow:hidden}
 
 <main>
 
-<!-- ========== DENNÉ MENU ========== -->
 <section id="denne-menu" class="light wave">
   <div class="wrap">
     <div class="sec-head">
@@ -265,19 +246,16 @@ footer{background:var(--deep);padding:0 0 28px;overflow:hidden}
     <p class="note-s">Každý deň podľa vlastného výberu</p>
     <ul class="list">
       <li class="item">
-        <!-- TODO-OVERIT: gramáž a bylinky. Obrázok na babettakgp.sk: "bylinky 100/350g", menucka.sk: "mikrobylinky 150/300g". -->
         <span class="n">Grilované kuracie prsia sous vide a loaded fries</span><span class="p">11,95 €</span>
-        <span class="d">domáce hranolky, pesto zo sušených paradajok, 2× slaninový chips, domáca mayo, strúhaný Volovec, bylinky<sup>3,7</sup> <span class="g">100/350 g</span></span>
+        <span class="d">domáce hranolky, pesto zo sušených paradajok, 2× slaninový chips, domáca mayo, strúhaný Volovec, bylinky<sup>3,7</sup></span>
       </li>
       <li class="item">
-        <!-- TODO-OVERIT: ktorá cena patrí ku ktorej prílohe. Na menu je "13,00 / 12,50 €" bez priradenia, predpoklad: pyré 13,00 €, hranolky 12,50 €. -->
         <span class="n">Chrumkavá Gouda 48 % v panko strúhanke</span><span class="p">13,00 / 12,50 €</span>
-        <span class="d">Babetta cviklová tatarka, mikrobylinky <span class="g">120/50 g</span>. Príloha: batatovo-zemiakové pyré 250 g alebo domáce hranolky 150 g<sup>1,3,7,10</sup></span>
+        <span class="d">Babetta cviklová tatarka, mikrobylinky <span class="g">120/50 g</span>. Príloha: batatovo-zemiakové pyré 250 g / domáce hranolky 150 g<sup>1,3,7,10</sup></span>
       </li>
       <li class="item">
-        <!-- TODO-OVERIT: "julienne koreňová zelenina" (obrázok) vs. "julienne zelenina" (menucka.sk). -->
         <span class="n">Silný divinový vývar z daniela</span><span class="p">4,95 / 9,50 €</span>
-        <span class="d">domáca karlovarská knedľa so slaninkou, julienne koreňová zelenina<sup>1,3,7,9</sup> <span class="g">malý 330 ml / veľký 500 ml</span></span>
+        <span class="d">domáca karlovarská knedľa so slaninkou, julienne zelenina<sup>1,3,7,9</sup> <span class="g">malý 330 ml / veľký 500 ml</span></span>
       </li>
       <li class="item">
         <span class="n">Domáce paté z jeleňa</span><span class="p">7,50 €</span>
@@ -291,14 +269,12 @@ footer{background:var(--deep);padding:0 0 28px;overflow:hidden}
   </div>
 </section>
 
-<!-- ========== RAŇAJKY ========== -->
 <section id="ranajky" class="dark wave">
   <div class="wrap">
     <div class="sec-head">
       <h2 class="poster">Raňajky</h2>
       <p>Po až Pi 7:00 až 10:30</p>
     </div>
-    <!-- TODO-OVERIT: pri Vajciach Benedikt, Babetta bagel a Božských vajciach sú dve ceny (napr. 8,95 / 9,95 €). Menu nevysvetľuje, ktorá patrí ku ktorej variante (slanina / losos, + slaninka). Ponechané bez vysvetlenia. -->
     <ul class="list">
       <li class="item">
         <span class="n">Vajcia Benedikt s holandskou omáčkou</span><span class="p">8,95 / 9,95 €</span>
@@ -325,7 +301,6 @@ footer{background:var(--deep);padding:0 0 28px;overflow:hidden}
         <span class="d">2 ks farmárske párky, 2 ks volské oko z domácich vajec, 3× do chrumkava opečená slanina, kváskový chlieb<sup>1,3,7</sup> <span class="g">330 g</span></span>
       </li>
       <li class="item">
-        <!-- TODO-OVERIT: na menu je "domáci čučoriedkový džemi", prepísané ako "džem" (pravdepodobne preklep). -->
         <span class="n">Tvarohové lievance s ovsenými vločkami, 3 ks</span><span class="p">7,95 €</span>
         <span class="d">domáci čučoriedkový džem, vyšľahané mascarpone s vanilkou, malinové coulis, lyofilizované ovocie<sup>1,3,7</sup> <span class="g">290 g</span></span>
       </li>
@@ -345,7 +320,6 @@ footer{background:var(--deep);padding:0 0 28px;overflow:hidden}
   </div>
 </section>
 
-<!-- ========== NÁPOJE ========== -->
 <section id="napoje" class="light wave">
   <div class="wrap">
     <div class="sec-head">
@@ -453,12 +427,10 @@ footer{background:var(--deep);padding:0 0 28px;overflow:hidden}
     <details class="cat">
       <summary><span class="poster">Koktaily</span><span class="r"><span class="pm" aria-hidden="true"></span></span></summary>
       <ul class="list tight">
-        <!-- TODO-OVERIT: pri Aperol Spritz, Hugo, Mimosa a Malinové Bellini je uvedená "nealko verzia", ale len jedna cena. Nie je jasné, či platí pre obe verzie. -->
         <li class="item"><span class="n">Aperol Spritz / nealko verzia <span class="g">300 ml</span></span><span class="p">4,90 €</span></li>
         <li class="item"><span class="n">Hugo / nealko verzia <span class="g">250 ml</span></span><span class="p">5,50 €</span></li>
         <li class="item"><span class="n">Gin tonic / nealko verzia <span class="g">300 ml</span></span><span class="p">5,50 / 4,50 €</span></li>
         <li class="item"><span class="n">Gin tonic &amp; grep / nealko verzia <span class="g">300 ml</span></span><span class="p">5,80 / 4,80 €</span></li>
-        <!-- TODO-OVERIT: Mojito má dve ceny 5,00 / 4,00 €, ale nealko verzia nie je v názve uvedená. -->
         <li class="item"><span class="n">Mojito <span class="g">300 ml</span></span><span class="p">5,00 / 4,00 €</span></li>
         <li class="item"><span class="n">Cuba libre <span class="g">300 ml</span></span><span class="p">5,50 €</span></li>
         <li class="item"><span class="n">Mimosa / nealko verzia <span class="g">150 ml</span></span><span class="p">4,50 €</span></li>
@@ -471,11 +443,9 @@ footer{background:var(--deep);padding:0 0 28px;overflow:hidden}
     <details class="cat">
       <summary><span class="poster">Víno</span><span class="r"><span class="pm" aria-hidden="true"></span></span></summary>
       <ul class="list tight">
-        <!-- TODO-OVERIT: pri bielom víne chýba na menu jednotka ("Biele 0,1"), doplnené "0,1 l". -->
-        <li class="item"><span class="n">Biele <span class="g">0,1 l</span></span><span class="p">2,80 €</span><span class="d">Rulandské šedé, Nad vinohradmi, 2023, suché</span></li>
+        <li class="item"><span class="n">Biele <span class="g">0,1</span></span><span class="p">2,80 €</span><span class="d">Rulandské šedé, Nad vinohradmi, 2023, suché</span></li>
         <li class="item"><span class="n">Červené <span class="g">0,1 l</span></span><span class="p">3,10 €</span><span class="d">Dunaj, Via Magna, D.S.C., 2021, suché</span></li>
         <li class="item"><span class="n">Šumivé <span class="g">0,15 l</span></span><span class="p">3,95 €</span><span class="d">Prosecco Promosso Treviso Frizzante STV DOC, Montelvini</span></li>
-        <!-- TODO-OVERIT: objem nealko prosecca nie je uvedený. -->
         <li class="item"><span class="n">Nealko prosecco</span><span class="p">3,50 €</span></li>
         <li class="item"><span class="n">Prosecco Rosé Brut DOC <span class="g">fľaša</span></span><span class="p">27,00 €</span></li>
         <li class="item"><span class="n">Devín, Vins Winery, biele suché <span class="g">fľaša</span></span><span class="p">20,00 €</span></li>
@@ -514,7 +484,6 @@ footer{background:var(--deep);padding:0 0 28px;overflow:hidden}
   </div>
 </section>
 
-<!-- ========== KONTAKT ========== -->
 <section id="kontakt" class="dark wave">
   <div class="wrap">
     <div class="sec-head">
@@ -563,17 +532,16 @@ footer{background:var(--deep);padding:0 0 28px;overflow:hidden}
 
 <script>
 (function(){
-  var d=0,m=0;
+  var d=-1,m=0,ok=false;
   try{
     var p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Bratislava',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
     var o={};p.forEach(function(x){o[x.type]=x.value});
     d=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(o.weekday);
-    m=parseInt(o.hour,10)*60+parseInt(o.minute,10);
+    m=(parseInt(o.hour,10)%24)*60+parseInt(o.minute,10);
+    ok=d>=0&&!isNaN(m);
   }catch(e){d=new Date().getDay()}
-  // Stav otvorené / zatvorené
   var s=document.getElementById('status');
-  if(d>=1&&d<=5&&m){s.textContent=(m>=420&&m<900)?'Otvorené':'Zatvorené';s.hidden=false}
-  // Záložky dní (bez JS sú viditeľné všetky dni)
+  if(ok&&d>=0){s.textContent=(d>=1&&d<=5&&m>=420&&m<900)?'Otvorené':'Zatvorené';s.hidden=false}
   var tabs=document.getElementById('tabs');
   var bt=tabs.querySelectorAll('.tab'),panels=document.querySelectorAll('.special');
   document.documentElement.classList.add('js');tabs.hidden=false;
